@@ -1,0 +1,6 @@
+@JogoDaForca_HostAddress = http://localhost:5089
+
+GET {{JogoDaForca_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
