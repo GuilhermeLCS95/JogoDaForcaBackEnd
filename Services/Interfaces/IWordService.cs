@@ -2,7 +2,7 @@
 
 namespace JogoDaForca.Services.Interfaces
 {
-    public interface IWordServices
+    public interface IWordService
     {
         Task<WordModel> GetWord();
         Task<WordModel> UpdateWord();

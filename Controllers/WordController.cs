@@ -1,4 +1,5 @@
-﻿using JogoDaForca.Services.Interfaces;
+﻿using JogoDaForca.Services;
+using JogoDaForca.Services.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,24 +9,27 @@ namespace JogoDaForca.Controllers
     [ApiController]
     public class WordController : ControllerBase
     {
-        private readonly IWordServices _gameServices;
+        private readonly IWordService _wordService;
+        private readonly IGameResponseService _gameResponseService;
 
-        public WordController(IWordServices gameServices)
+        public WordController(IWordService wordServices, IGameResponseService gameResponseService)
         {
-            _gameServices = gameServices;
+            _wordService = wordServices;
+            _gameResponseService = gameResponseService;
         }
 
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            var word = await _gameServices.GetWord();
+            var word = await _wordService.GetWord();
             return Ok(word);
         }
 
         [HttpPut]
         public async Task<IActionResult> Update()
         {
-            var word = await _gameServices.UpdateWord();
+            var word = await _wordService.UpdateWord();
+            _gameResponseService.ResetGame();
             return Ok(word);  
         }
     }

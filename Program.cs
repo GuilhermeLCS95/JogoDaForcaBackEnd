@@ -1,4 +1,5 @@
 
+using JogoDaForca.Models;
 using JogoDaForca.Services;
 using JogoDaForca.Services.Interfaces;
 
@@ -15,7 +16,10 @@ namespace JogoDaForca
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 
-            builder.Services.AddSingleton<IWordServices, WordServices>();
+            builder.Services.AddSingleton<IWordService, WordService>();
+            builder.Services.AddSingleton<IGuessService, GuessService>();
+            builder.Services.AddSingleton<IGameResponseService, GameResponseService>();
+
 
             builder.Services.AddHttpClient();
 

@@ -31,3 +31,4 @@ C:\Users\gui_f\source\repos\JogoDaForca\JogoDaForca\obj\Debug\net8.0\refint\Jogo
 C:\Users\gui_f\source\repos\JogoDaForca\JogoDaForca\obj\Debug\net8.0\JogoDaForca.pdb
 C:\Users\gui_f\source\repos\JogoDaForca\JogoDaForca\obj\Debug\net8.0\JogoDaForca.genruntimeconfig.cache
 C:\Users\gui_f\source\repos\JogoDaForca\JogoDaForca\obj\Debug\net8.0\ref\JogoDaForca.dll
+C:\Users\gui_f\source\repos\JogoDaForca\JogoDaForca\obj\Debug\net8.0\JogoDaForca.sourcelink.json

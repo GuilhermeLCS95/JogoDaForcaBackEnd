@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("JogoDaForca")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4dd3531a58c133573da624c67fdac7dc5b2a8f9c")]
 [assembly: System.Reflection.AssemblyProductAttribute("JogoDaForca")]
 [assembly: System.Reflection.AssemblyTitleAttribute("JogoDaForca")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

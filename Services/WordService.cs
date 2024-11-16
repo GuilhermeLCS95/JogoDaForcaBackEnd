@@ -5,12 +5,12 @@ using System.Text.Json.Serialization;
 
 namespace JogoDaForca.Services
 {
-    public class WordServices : IWordServices
+    public class WordService : IWordService
     {
         private readonly HttpClient _httpClient;
         private WordModel _wordModel;
 
-        public WordServices(HttpClient httpClient)
+        public WordService(HttpClient httpClient)
         {
             _httpClient = httpClient;
         }
@@ -25,7 +25,7 @@ namespace JogoDaForca.Services
 
             if(words == null || words.Count == 0)
             {
-                await Console.Out.WriteLineAsync("A lista está vazia ou não pôde ser carregada.");
+                return new WordModel { Message = "A lista está vazia ou houve um problema de carregamento." };
             }
 
             var random = new Random();
@@ -36,24 +36,16 @@ namespace JogoDaForca.Services
 
         public async Task<WordModel> GetWord()
         {
-            if ( _wordModel == null)
+            if (_wordModel == null)
             {
-                var word = await GetRandomWord();
-                return word;
+                _wordModel = await GetRandomWord();
             }
-            else
-            {
-                return _wordModel;
-            }
+            return _wordModel;
         }
 
         public async Task<WordModel> UpdateWord()
         {
-            if (_wordModel != null)
-            {
-                var word = await GetRandomWord();
-                return word;
-            }
+            _wordModel = await GetRandomWord();
             return _wordModel;
         }
     }
